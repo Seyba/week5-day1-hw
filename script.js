@@ -14,5 +14,27 @@ mainEl.classList.add('flex-ctr')
 
 //* Task 2 
 const topMenuEl = document.getElementById('top-menu')
-console.log(topMenuEl)
+//console.log(topMenuEl)
 topMenuEl.style.height = '100%'
+//const topMenuBg = window.getComputedStyle(document.documentElement).getPropertyValue('--top-menu-bg')
+topMenuEl.style.background =  'var(--top-menu-bg)' //topMenuBg
+topMenuEl.classList.add('flex-around')
+
+//* Task 3 
+
+// Menu data structure
+const menuLinks = [
+    {text: 'about', href: '/about'},
+    {text: 'catalog', href: '/catalog'},
+    {text: 'orders', href: '/orders'},
+    {text: 'account', href: '/account'},
+];
+
+menuLinks.forEach((link) => {
+    const aTag = document.createElement('a')
+    aTag.setAttribute('href', link.text)
+    aTag.textContent = link.text
+    topMenuEl.appendChild(aTag)
+    console.log(link.text)
+    console.log(link.href)
+})
